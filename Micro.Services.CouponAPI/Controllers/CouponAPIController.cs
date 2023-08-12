@@ -1,5 +1,7 @@
-﻿using Micro.Services.CouponAPI.Data;
+﻿using AutoMapper;
+using Micro.Services.CouponAPI.Data;
 using Micro.Services.CouponAPI.Models;
+using Micro.Services.CouponAPI.Models.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,42 +12,48 @@ namespace Micro.Services.CouponAPI.Controllers
     public class CouponAPIController : ControllerBase
     {
         private readonly StoreContext _db;
-        public CouponAPIController(StoreContext db)
+        private ResponseDto _response;
+        private IMapper _mapper;
+        public CouponAPIController(StoreContext db, IMapper mapper)
         {   
             _db = db;
+            _mapper = mapper;
+            _response = new ResponseDto();
         }
 
         [HttpGet]
-        public object Get()
+        public ResponseDto Get()
         {
             try
             {
                 IEnumerable<Coupon> objList = _db.Coupons.ToList();
-                return objList;
+                _response.Result = _mapper.Map<IEnumerable<CouponDto>>(objList);
 
             }
             catch (Exception ex)
             {
-
+                _response.IsSuccess = false;
+                _response.Message   = ex.Message;
             }
-            return null;
+            return _response;
         }
 
         [HttpGet]
         [Route("{id:int}")]
-        public object GetById(int id)
+        public ResponseDto GetById(int id)
         {
             try
             {
-                Coupon objList = _db.Coupons.First(u=>u.CouponId==id);
-                return objList;
+                Coupon obj = _db.Coupons.First(u=>u.CouponId==id);
+                _response.Result =  _mapper.Map<CouponDto>(obj);
 
             }
             catch (Exception ex)
             {
-
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
             }
-            return null;
+            return _response;
         }
     }
 }
