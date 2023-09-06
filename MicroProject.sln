@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{58
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Services.CouponAPI", "Micro.Services.CouponAPI\Micro.Services.CouponAPI.csproj", "{974BD239-315E-409F-B201-3A1B22B70407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Web", "Micro.Web\Micro.Web.csproj", "{6C202BA1-B18D-40F9-96D9-F6625BB9F3D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Web", "Micro.Web\Micro.Web.csproj", "{6C202BA1-B18D-40F9-96D9-F6625BB9F3D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Services.AuthAPI", "Micro.Services.AuthAPI\Micro.Services.AuthAPI.csproj", "{D1074C09-D452-4A18-A441-7238678D6CB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{6C202BA1-B18D-40F9-96D9-F6625BB9F3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C202BA1-B18D-40F9-96D9-F6625BB9F3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C202BA1-B18D-40F9-96D9-F6625BB9F3D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1074C09-D452-4A18-A441-7238678D6CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1074C09-D452-4A18-A441-7238678D6CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1074C09-D452-4A18-A441-7238678D6CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1074C09-D452-4A18-A441-7238678D6CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{974BD239-315E-409F-B201-3A1B22B70407} = {58D6C3A6-5071-4DBC-A665-6EC9D15E604E}
 		{6C202BA1-B18D-40F9-96D9-F6625BB9F3D1} = {A7929F44-6E72-4A0D-9320-256E62517212}
+		{D1074C09-D452-4A18-A441-7238678D6CB9} = {58D6C3A6-5071-4DBC-A665-6EC9D15E604E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA188569-C53B-4DED-8CAC-503BAC41B37B}
